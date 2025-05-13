@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background: #50aef8;
+    color: #fff;
+  }
+  
+  header {
+    background-color: #2f234e;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #fff;
+    
+  }
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+    color: #fff;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  nav a {
+    color: #bbb;
+    text-decoration: none;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+  
+  nav a:hover {
+    border-color: #ff3c57;
+    color: #fff;
+  }
+  
+  main {
+    text-align: center;
+    padding: 3rem 1rem;
+    background:#50aef8;
+  }
+  
+  main p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+  }
+  
+  .carousel {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .carousel-item {
+    background: #3c649e;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background 0.3s;
+  }
+  
+  .carousel-item:hover {
+    transform: translateY(-5px);
+    background:#dedee6;
+  }
+  
+  .carousel-item h2 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  
+  .carousel-item p {
+    color: #bbb;
+  }
+  .img-carousel {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+
+  
+  
+  footer {
+    background-color: #1c1c1c;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #888;
+    border-top: 1px solid #333;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+  .branding {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }

@@ -1,0 +1,129 @@
+body {
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+    background-color: #50aef8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    min-height: 100vh;
+    padding: 2rem;
+    margin: 0;
+  }
+  
+  .container {
+    text-align: center;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  #key-display {
+    font-size: 5rem;
+    margin: 1rem 0;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: inline-block;
+  }
+  
+  .keyboard {
+    margin-top: 1rem;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0;
+  }
+  
+  .key {
+    width: 40px;
+    height: 40px;
+    margin: 0.2rem;
+    background: #eee;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: 0.2s;
+  }
+  
+  .key.correct {
+    background: #a6f0c6;
+    border-color: #ffff;
+  }
+  
+  .key.wrong {
+    background: #f8b6b6;
+    border-color: #e74c3c;
+  }
+  
+  /* Dedos */
+  .pinky { background: #f8c8dc; }
+  .ring { background: #ffd6a5; }
+  .middle { background: #fdffb6; }
+  .index { background: #caffbf; }
+  
+  .finger-color.pinky { background: #f8c8dc; }
+  .finger-color.ring { background: #ffd6a5; }
+  .finger-color.middle { background: #fdffb6; }
+  .finger-color.index { background: #caffbf; }
+  
+  .guide {
+    margin-top: 2rem;
+    text-align: left;
+  }
+  
+  .guide ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .color-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+    border-radius: 4px;
+  }
+
+  .scoreboard {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .bonus-message {
+    font-size: 1.5rem;
+    color: #50aef8;
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+
+  .scoreboard {
+    background-color: #2d2d2d;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 1rem auto;
+    width: 250px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .scoreboard h2 {
+    margin-top: 0;
+    color: #ffff;
+  }
+  
+  .bonus-message {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #50aef8;
+    font-size: 1.3rem;
+  }
+  
+  
+  
