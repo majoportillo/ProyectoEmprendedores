@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Juego de Operaciones</title>
+	<link rel="stylesheet" href="retomat.css">
+</head>
+<body>
+	<div class="container">
+		<div class="titulo-juego">
+			<h1>Operaciones Matemáticas</h1>
+			<br>
+    		<p>Realiza las operaciones antes de que acabe el tiempo</p>
+    	</div>
+		<div class="izquierdo">
+			<div class="temporizador">Tiempo: <span id="tiempo">20</span> segundos</div>
+			<div class="container-operacion">
+				<span id="suma">9 + 9 =</span>
+				<span class="resultado" id="resultado">?</span>
+			</div>
+			<span class="msj" id="msj"></span>
+            <div class="puntaje">
+				<p>Correctas: <span id="aciertos">0</span></p>
+				<p>Incorrectas: <span id="errores">0</span></p>
+			</div>
+		</div>
+		<div class="derecha">
+			<span id="op1" class="opcion" onclick="controlarRespuesta(this)">18</span>
+			<span id="op2" class="opcion" onclick="controlarRespuesta(this)">17</span>
+			<span id="op3" class="opcion" onclick="controlarRespuesta(this)">8</span>
+		</div>
+	</div>
+
+	<!-- Sonidos -->
+	<audio id="audio-bien" src="audio/video-game-bonus.mp3"></audio>
+	<audio id="audio-mal" src="audio/wrong.mp3"></audio>
+	<audio id="audio-perder" src="audio/video-game-lose-sound.mp3"></audio>
+
+	<script src="retomat.js"></script>
+</body>
+</html>
+
+
