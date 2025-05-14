@@ -119,3 +119,24 @@ body {
     align-items: center;
     gap: 0.5rem;
   }
+
+  .social-media {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.social-media li {
+  margin: 10px 0;
+}
+
+.social-media a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.social-media i {
+  margin-right: 8px;
+  color: #50aef8; /* puedes cambiar el color */
+}
