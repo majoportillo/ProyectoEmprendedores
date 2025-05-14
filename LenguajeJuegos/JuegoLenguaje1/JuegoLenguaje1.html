@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Encuentra la Letra</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(45deg, #9ab8c2, #7bb0b9, #c4c25b, #a6c1ee);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      color: white;
+      text-shadow: 2px 2px #000;
+      margin-bottom: 10px;
+    }
+
+    #target-letter {
+      font-size: 80px;
+      color: #fff;
+      margin: 20px;
+      text-shadow: 3px 3px #000;
+    }
+
+    .letters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .letter {
+      background: white;
+      border: 3px solid #ffd700;
+      border-radius: 15px;
+      width: 80px;
+      height: 80px;
+      font-size: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .letter:hover {
+      transform: scale(1.1);
+      background: #ffe066;
+    }
+
+    #message {
+      font-size: 24px;
+      color: white;
+      margin-top: 15px;
+      height: 30px;
+    }
+
+    #score, #timer {
+      font-size: 20px;
+      color: white;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔤 ¡Encuentra la letra!</h1>
+  <div id="score">Puntaje: 0</div>
+  <div id="timer">Tiempo: 20s</div>
+  <div id="target-letter">A</div>
+  <div class="letters" id="letters-container"></div>
+  <div id="message"></div>
+
+  <script>
+    const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+    const targetDiv = document.getElementById('target-letter');
+    const container = document.getElementById('letters-container');
+    const message = document.getElementById('message');
+    const scoreDiv = document.getElementById('score');
+    const timerDiv = document.getElementById('timer');
+
+    let score = 0;
+    let timeLeft = 60;
+    let currentCorrect = '';
+
+    function getRandomLetter() {
+      return letras[Math.floor(Math.random() * letras.length)];
+    }
+
+    function generarJuego() {
+      container.innerHTML = '';
+      message.textContent = '';
+
+      const letraCorrecta = getRandomLetter();
+      currentCorrect = letraCorrecta;
+      targetDiv.textContent = letraCorrecta;
+
+      const opciones = new Set();
+      opciones.add(letraCorrecta);
+      while (opciones.size < 6) {
+        opciones.add(getRandomLetter());
+      }
+
+      const letrasAleatorias = Array.from(opciones).sort(() => Math.random() - 0.5);
+
+      letrasAleatorias.forEach(letra => {
+        const div = document.createElement('div');
+        div.className = 'letter';
+        div.textContent = letra;
+        div.addEventListener('click', () => manejarRespuesta(letra));
+        container.appendChild(div);
+      });
+    }
+
+    function manejarRespuesta(letra) {
+      if (letra === currentCorrect) {
+        score++;
+        scoreDiv.textContent = `Puntaje: ${score}`;
+        message.textContent = '✅ ¡Muy bien!';
+        setTimeout(generarJuego, 500);
+      } else {
+        message.textContent = '❌ Intenta de nuevo';
+      }
+    }
+
+    function iniciarTemporizador() {
+      const intervalo = setInterval(() => {
+        timeLeft--;
+        timerDiv.textContent = `Tiempo: ${timeLeft}s`;
+
+        if (timeLeft <= 0) {
+          clearInterval(intervalo);
+          container.innerHTML = '';
+          message.textContent = `⏰ Tiempo terminado. Puntaje final: ${score}`;
+        }
+      }, 1000);
+    }
+
+    generarJuego();
+    iniciarTemporizador();
+  </script>
+</body>
+</html>
