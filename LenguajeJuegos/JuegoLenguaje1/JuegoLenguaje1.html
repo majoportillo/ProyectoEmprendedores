@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Encuentra la Letra</title>
+  <title>Encuentra la Palabra con la Letra</title>
   <style>
     body {
       margin: 0;
@@ -31,7 +31,7 @@
     }
 
     #target-letter {
-      font-size: 80px;
+      font-size: 60px;
       color: #fff;
       margin: 20px;
       text-shadow: 3px 3px #000;
@@ -48,9 +48,8 @@
       background: white;
       border: 3px solid #ffd700;
       border-radius: 15px;
-      width: 80px;
-      height: 80px;
-      font-size: 40px;
+      padding: 10px 20px;
+      font-size: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -79,66 +78,95 @@
   </style>
 </head>
 <body>
-  <h1>🔤 ¡Encuentra la letra!</h1>
+  <h1>🔤 ¡Encuentra la palabra con la letra!</h1>
   <div id="score">Puntaje: 0</div>
   <div id="timer">Tiempo: 20s</div>
+  <div id="level">Nivel: 1</div>
   <div id="target-letter">A</div>
   <div class="letters" id="letters-container"></div>
   <div id="message"></div>
 
   <script>
     const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+    const palabras = ["KIWI", "HOGAR", "AVIÓN", "PERRO", "GATO", "ZORRO", "CASA", "MESA", "LUNA", "SOL", "LIBRO", "JARDÍN", "FLORES", "SILLA", "NIÑO", "NIÑA", "ESCOBA", "BOTELLA", "CAMISA", "TELÉFONO", "ORDENADOR", "PROYECTO"];
+
     const targetDiv = document.getElementById('target-letter');
     const container = document.getElementById('letters-container');
     const message = document.getElementById('message');
     const scoreDiv = document.getElementById('score');
     const timerDiv = document.getElementById('timer');
+    const nivelDiv = document.getElementById("level");
+    let nivel = 1;
+    let palabrasPorRonda = 6;
+    let tiempoInicial = 20;
 
     let score = 0;
     let timeLeft = 60;
-    let currentCorrect = '';
+    let letraObjetivo = '';
+
 
     function getRandomLetter() {
       return letras[Math.floor(Math.random() * letras.length)];
+    }
+
+    function getRandomWords(cantidad) {
+      const mezcladas = [...palabras].sort(() => Math.random() - 0.5);
+      return mezcladas.slice(0, cantidad);
     }
 
     function generarJuego() {
       container.innerHTML = '';
       message.textContent = '';
 
-      const letraCorrecta = getRandomLetter();
-      currentCorrect = letraCorrecta;
-      targetDiv.textContent = letraCorrecta;
+      letraObjetivo = getRandomLetter();
+      targetDiv.textContent = `Letra objetivo: ${letraObjetivo}`;
 
-      const opciones = new Set();
-      opciones.add(letraCorrecta);
-      while (opciones.size < 6) {
-        opciones.add(getRandomLetter());
+      const palabrasAleatorias = getRandomWords(6);
+
+      // Asegurarse de que al menos una palabra tenga la letra
+      if (!palabrasAleatorias.some(p => p.includes(letraObjetivo))) {
+        // reemplazar la primera con una que sí tenga la letra
+        const palabraConLetra = palabras.find(p => p.includes(letraObjetivo)) || "AVIÓN";
+        palabrasAleatorias[0] = palabraConLetra;
       }
 
-      const letrasAleatorias = Array.from(opciones).sort(() => Math.random() - 0.5);
+      palabrasAleatorias.sort(() => Math.random() - 0.5);
 
-      letrasAleatorias.forEach(letra => {
+      palabrasAleatorias.forEach(palabra => {
         const div = document.createElement('div');
         div.className = 'letter';
-        div.textContent = letra;
-        div.addEventListener('click', () => manejarRespuesta(letra));
+        div.textContent = palabra;
+        div.addEventListener('click', () => manejarRespuesta(palabra));
         container.appendChild(div);
       });
     }
-
-    function manejarRespuesta(letra) {
-      if (letra === currentCorrect) {
+let temporizador = iniciarTemporizador();
+    function manejarRespuesta(palabraSeleccionada) {
+      if (palabraSeleccionada.includes(letraObjetivo)) {
         score++;
         scoreDiv.textContent = `Puntaje: ${score}`;
         message.textContent = '✅ ¡Muy bien!';
-        setTimeout(generarJuego, 500);
+        setTimeout(generarJuego, 700);
       } else {
-        message.textContent = '❌ Intenta de nuevo';
+        message.textContent = '❌ Intenta con otra palabra';
       }
+      //subir de nivel cada 3 puntos
+      if (score % 3 === 0) {
+        nivel++;
+        palabrasPorRonda++; 
+        tiempoInicial = Math.max(30, tiempoInicial - 10);
+        nivelDiv.textContent = `Nivel: ${nivel}`;
+
+        clearInterval(temporizador); //reiniciar el tiempo con los nuevo ajustes 
+        temporizador = iniciarTemporizador();
+      }
+      
     }
 
     function iniciarTemporizador() {
+     timeLeft = tiempoInicial;
+     timerDiv.textContent = `Tiempo: ${timeLeft}s`;
+
       const intervalo = setInterval(() => {
         timeLeft--;
         timerDiv.textContent = `Tiempo: ${timeLeft}s`;
