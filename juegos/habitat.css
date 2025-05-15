@@ -1,0 +1,87 @@
+/* habitat.css */
+
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Contenedor principal del juego */
+.contenedor-juego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Animales arrastrables */
+.animales {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.animal {
+    width: 150px;
+    cursor: grab;
+    transition: transform 0.2s;
+}
+
+.animal:active {
+    cursor: grabbing;
+    transform: scale(1.05);
+}
+
+/* Zonas de hábitat */
+.habitats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.zona {
+    width: 150px;
+    height: 150px;
+    border: 3px dashed #aaa;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Estilos cuando la respuesta es correcta */
+.zona.correcto {
+    background-color: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+/* Estilos cuando la respuesta es incorrecta */
+.zona.incorrecto {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+/* Mensaje de feedback */
+.mensaje {
+    font-size: 1.3rem;
+    font-weight: bold;
+    min-height: 30px;
+    color: #333;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}

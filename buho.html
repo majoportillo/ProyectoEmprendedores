@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/logooscuro.png">
+    <title>Búho Sabio - Mind Boost</title>
+</head>
+
+<body>
+    <header>
+        <img src="images/logoclaro.png" alt="Logo Mind Boost" class="logo">
+        <h1>Juego Búho Sabio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Acerca de</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="game-container">
+            <h2>¡Resuelve el desafío del Búho Sabio!</h2>
+            <p id="game-description">Completa la frase: <span id="frase-incompleta">_____ el sol está brillante.</span></p>
+
+            <!-- Botones para completar la frase -->
+            <button onclick="completarFrase('Hoy')" id="btnHoy">Hoy</button>
+            <button onclick="completarFrase('Ayer')" id="btnAyer">Ayer</button>
+            <button onclick="completarFrase('Mañana')" id="btnManana">Mañana</button>
+
+            <button onclick="verificarFrase()" id="btnVerificar" class="btn-verificar">Verificar</button>
+
+            <div id="message"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Proyecto Emprendedores</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <audio id="sonido-correcto" src="sound/correcto.mp3" preload="auto"></audio>
+<audio id="sonido-incorrecto" src="sound/incorrecto.mp3" preload="auto"></audio>
+<script src="script.js"></script>
+</body>
+</html>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clasifica los animales</title>
+    <link rel="stylesheet" href="habitat.css">
+</head>
+<body>
+
+    <h1>¿Dónde vive cada animal?</h1>
+
+    <div id="mensaje" class="mensaje"></div>
+
+    <div class="contenedor-juego">
+        <div class="animales">
+            <img src="../images/leon.png" draggable="true" id="leon" class="animal" alt="León">
+            <img src="../images/tiburon.png" draggable="true" id="tiburon" class="animal" alt="Tiburón">
+            <img src="../images/camello.png" draggable="true" id="camello" class="animal" alt="Camello">
+        </div>
+
+        <div class="habitats">
+            <div class="zona" id="jungla">🌴 Jungla</div>
+            <div class="zona" id="oceano">🌊 Océano</div>
+            <div class="zona" id="desierto">🏜️ Desierto</div>
+        </div>
+    </div>
+
+    <audio id="sonido-correcto" src="../sounds/correcto.pm3"></audio>
+    <audio id="sonido-error" src="../sounds/incorrecto.mp3"></audio>
+
+    <script src="habitat.js"></script>
+</body>
+</html>
