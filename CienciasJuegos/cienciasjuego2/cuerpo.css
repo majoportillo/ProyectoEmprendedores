@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  text-align: center;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+.zona-juego {
+  margin: 20px auto;
+}
+
+.imagen-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.imagen-juego {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.drop-area {
+  width: 100px;
+  height: 30px;
+  border: 2px dashed #999;
+  position: absolute;
+  background-color: #ffffffcc;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.drop-area.correcto {
+  background-color: #d4edda;
+  color: #155724;
+  border: 2px solid #28a745;
+}
+
+.drop-area.incorrecto {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 2px solid #dc3545;
+}
+
+.palabras {
+  margin-top: 20px;
+}
+
+.palabra {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 8px;
+  cursor: grab;
+  font-weight: bold;
+  user-select: none;
+}
+.palabra.usada {
+  background-color: #999;
+  cursor: not-allowed;
+}
+.botones button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.botones button:hover {
+  background-color: #2980b9;
+}
+.nivel {
+  display: none;
+}
+
+.nivel.active {
+  display: block;
+}
+
+

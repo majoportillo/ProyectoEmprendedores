@@ -1,0 +1,36 @@
+<!-- HTML: juego de comunicación y lenguaje -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de Comunicación y Lenguaje</title>
+  <link rel="stylesheet" href="palabras.css">
+</head>
+<body>
+  <div class="juego-container">
+    <h1>Clasifica las Palabras</h1>
+    <p id="instrucciones">Arrastra cada palabra a su categoría correcta</p>
+
+    <div id="nivel">Nivel 1: Sustantivos y Verbos</div>
+
+    <div class="palabras" id="palabras-container"></div>
+
+    <div id="categorias-container" class="categorias-flex"></div>
+
+    <div id="puntos">Puntos: 0</div>
+    <div id="mensaje-nivel" class="mensaje-nivel"></div>
+    <div class="botones">
+      <button onclick="siguienteNivel()">Siguiente Nivel</button>
+      <button onclick="reiniciarJuego()">Reiniciar</button>
+    </div>
+
+    <!-- Audios -->
+    <audio id="sonido-bien" src="audio/video-game-bonus.mp3"></audio>
+    <audio id="sonido-mal" src="audio/wrong.mp3"></audio>
+    <audio id="sonido-siguiente" src="audio/video-game-score.mp3"></audio>
+  </div>
+
+  <script src="palabras.js"></script>
+</body>
+</html>
