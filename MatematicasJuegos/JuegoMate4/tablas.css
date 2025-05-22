@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 2rem;
+}
+
+h1 {
+  color: #2f234e;
+}
+
+.zona-juego {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pregunta {
+  background-color: #fff;
+  border: 2px dashed #2f234e;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 150px;
+  font-size: 1.2rem;
+  min-height: 60px;
+}
+
+.respuestas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.respuesta {
+  background-color: #50aef8;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: grab;
+  font-size: 1.1rem;
+  user-select: none;
+  transition: background 0.3s;
+}
+
+.respuesta.usada {
+  background-color: #ccc;
+  pointer-events: none;
+}
+
+.correcto {
+  background-color: #4caf50 !important;
+  color: white;
+}
+
+.incorrecto {
+  background-color: #f44336 !important;
+  color: white;
+}
+
+.botones {
+  margin-top: 2rem;
+}
+
+button {
+  padding: 0.7rem 1.2rem;
+  margin: 0 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #2f234e;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #44357c;
+}

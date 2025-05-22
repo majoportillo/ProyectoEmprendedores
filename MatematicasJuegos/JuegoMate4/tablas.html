@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Juego: Tablas de Multiplicar</title>
+  <link rel="stylesheet" href="tablas.css" />
+</head>
+<body>
+  <h1>🧠 Practica las Tablas de Multiplicar</h1>
+  <h2 id="nivel-title">Nivel 1: Tabla del 1</h2>
+
+  <div id="zona-juego" class="zona-juego"></div>
+
+  <div class="opciones">
+    <h3>Respuestas</h3>
+    <div id="respuestas" class="respuestas"></div>
+  </div>
+
+  <div class="botones">
+    <p>Puntos: <span id="puntos">0</span></p>
+    <button onclick="siguienteNivel()">Siguiente Nivel</button>
+    <button onclick="reiniciarJuego()">Reiniciar</button>
+  </div>
+
+  <!-- Audios -->
+  <audio id="audioBien" src="audio/video-game-bonus.mp3"></audio>
+  <audio id="audioMal" src="audio/video-game-wrong.mp3"></audio>
+  <audio id="audioSiguiente" src="audio/video-game-score.mp3"></audio>
+
+  <script src="tablas.js"></script>
+</body>
+</html>
