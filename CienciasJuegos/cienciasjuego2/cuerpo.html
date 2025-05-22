@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Juego: Aprende las Partes del Cuerpo</title>
+  <link rel="stylesheet" href="cuerpo.css" />
+</head>
+<body>
+  <h1>Arrastra la parte del cuerpo al lugar correcto</h1>
+
+  <div class="zona-juego">
+    <div class="nivel" id="nivel1">
+      <h2>Nivel 1: Cuerpo Completo</h2>
+      <div class="imagen-container">
+        <img src="img/cuerpo.jpg" class="imagen-juego" />
+        <div class="drop-area" data-parte="cabeza" style="top: 10.6px; left: 140.2px;"></div>
+        <div class="drop-area" data-parte="corazón" style="top: 90px; left: 120px;"></div>
+        <div class="drop-area" data-parte="rodilla" style="top: 190.8px; left: 118.7px;"></div>
+        <div class="drop-area" data-parte="pie" style="top: 300px; left: 0px;"></div>
+        <div class="drop-area" data-parte="estómago" style="top: 128.2px; left: -80px;"></div>
+        <div class="drop-area" data-parte="hombro" style="top: 70.8px; left: -90px;"></div>
+        <div class="drop-area" data-parte="cadera" style="top: 200px; left: 273.5px;"></div>
+        <div class="drop-area" data-parte="cuello" style="top: 80.7px; left: 273.5px;"></div>
+        <div class="drop-area" data-parte="brazo" style="top: 200px; left: -100px;"></div>
+        <div class="drop-area" data-parte="tobillo" style="top: 270px; left: 273px;"></div>
+        <div class="drop-area" data-parte="codo" style="top: 140px; left: 278px;"></div>
+
+      </div>
+      <h3>Palabras</h3>
+      <div class="palabra" draggable="true">Cabeza</div>
+      <div class="palabra" draggable="true">Corazón</div>
+      <div class="palabra" draggable="true">Rodilla</div>
+      <div class="palabra" draggable="true">Pie</div>
+      <div class="palabra" draggable="true">Estómago</div>
+      <div class="palabra" draggable="true">Hombro</div>
+      <div class="palabra" draggable="true">Cadera</div>
+      <div class="palabra" draggable="true">Cuello</div>
+      <div class="palabra" draggable="true">Brazo</div>
+      <div class="palabra" draggable="true">Tobillo</div>
+      <div class="palabra" draggable="true">Codo</div>
+  </div>
+
+    </div>
+
+    <div class="nivel" id="nivel2">
+      <h2>Nivel 2: Rostro</h2>
+      <div class="imagen-container">
+        <img src="img/cara.jpeg" class="imagen-juego" />
+        <div class="drop-area" data-parte="ojo" style="top: 130px; left: -70px;"></div>
+        <div class="drop-area" data-parte="nariz" style="top: 200px; left: -60px;"></div>
+        <div class="drop-area" data-parte="oreja" style="top: 170px; left: 300px;"></div>
+        <div class="drop-area" data-parte="frente" style="top: 60px; left: -40px;"></div>
+        <div class="drop-area" data-parte="mentón" style="top: 290px; left: 120px;"></div>
+        <div class="drop-area" data-parte="mejilla" style="top: 250px; left: 250px;"></div>
+        <div class="drop-area" data-parte="ceja" style="top: 90px; left: 290px;"></div>
+        <div class="drop-area" data-parte="boca" style="top: 270px; left: 1px;"></div>
+        <div class="drop-area" data-parte="cabello" style="top: 0px; left: 290px;"></div>
+      </div>
+        <h3>Palabras</h3>
+        <div class="palabra" draggable="true">Ojo</div>
+        <div class="palabra" draggable="true">Boca</div>
+        <div class="palabra" draggable="true">Nariz</div>
+        <div class="palabra" draggable="true">Oreja</div>
+        <div class="palabra" draggable="true">Mejilla</div>
+        <div class="palabra" draggable="true">Ceja</div>
+        <div class="palabra" draggable="true">Mentón</div>
+        <div class="palabra" draggable="true">Frente</div>
+        <div class="palabra" draggable="true">Cabello</div>
+    </div>
+
+    <div class="nivel" id="nivel3">
+      <h2>Nivel 3: Mano</h2>
+      <div class="imagen-container">
+        <img src="img/hand.jpeg" class="imagen-juego" />
+        <div class="drop-area" data-parte="pulgar" style="top: 0px; left: 110px;"></div>
+        <div class="drop-area" data-parte="índice" style="top: 20px; left: 250px;"></div>
+        <div class="drop-area" data-parte="dedo_medio" style="top: 100px; left: 290px;"></div>
+        <div class="drop-area" data-parte="anular" style="top: 170px; left: 290px;"></div>
+        <div class="drop-area" data-parte="meñique" style="top: 250px; left: 130px;"></div>
+        <div class="drop-area" data-parte="muñeca" style="top: 70px; left: -30px;"></div>
+      </div>
+      <h3>Palabras</h3>
+        <div class="palabra" draggable="true">Meñique</div>
+        <div class="palabra" draggable="true">Anular</div>
+        <div class="palabra" draggable="true">Dedo_Medio</div>
+        <div class="palabra" draggable="true">Índice</div>
+        <div class="palabra" draggable="true">Pulgar</div>
+        <div class="palabra" draggable="true">Muñeca</div>
+    </div>
+  </div>
+  <div class="botones">
+  <button onclick="siguienteNivel()">Siguiente Nivel</button>
+  <button onclick="reiniciarJuego()">Reiniciar</button>
+
+  <audio id="sonido-bien" src="audio/video-game-bonus.mp3"></audio>
+    <audio id="sonido-mal" src="audio/wrong.mp3"></audio>
+    <audio id="sonido-siguiente" src="audio/video-game-score.mp3"></audio>
+</div>
+
+
+
+  <script src="cuerpo.js"></script>
+</body>
+</html>
+
+
