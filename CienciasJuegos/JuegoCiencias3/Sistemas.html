@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juego: Sistemas del Cuerpo</title>
+  <link rel="stylesheet" href="Sistemas.css" />
+</head>
+<body>
+  <h1>🧠 Aprende los Sistemas del Cuerpo</h1>
+  <h2 id="nivel-title">Nivel 1: Sistema Digestivo</h2>
+
+  <div id="zona-juego" class="zona-juego">
+    <img src="img/digestivo.png" alt="Sistema Digestivo" class="imagen-sistema">
+  </div>
+
+  <div id="etiquetas" class="etiquetas"></div>
+
+  <div class="botones">
+    <p>Puntos: <span id="puntos">0</span></p>
+    <button onclick="siguienteNivel()">Siguiente Nivel</button>
+    <button onclick="reiniciarJuego()">Reiniciar</button>
+  </div>
+
+  <audio id="sonido-correcto" src="audio/video-game-bonus.mp3" preload="auto"></audio>
+  <audio id="sonido-incorrecto" src="audio/wrong.mp3" preload="auto"></audio>
+  <audio id="sonido-nivel" src="audio/wrong.mp3" preload="auto"></audio>
+
+  <script src="sistemas.js"></script>
+</body>
+</html>
